@@ -1,0 +1,272 @@
+$dimensions: (
+  0: 0rem,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 0.75rem,
+  4: 1rem,
+  5: 1.25rem,
+  6: 1.5rem,
+  8: 2rem,
+  10: 2.5rem,
+  12: 3rem,
+  16: 4rem,
+  20: 5rem,
+  24: 6rem,
+  32: 8rem,
+  40: 10rem,
+  48: 12rem,
+  56: 14rem,
+  64: 16rem,
+);
+
+/*
+========================================================================================================================
+The Custom Classes For Handling Flex
+========================================================================================================================
+*/
+.flex-1{
+  flex:1
+}
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
+
+/*
+========================================================================================================================
+The Custom Classes For Handling Padding , Margins , Gapping
+========================================================================================================================
+*/
+@each $key, $value in $dimensions {
+  .gap-#{$key} {
+    gap: #{$value};
+  }
+  .gap-x-#{$key} {
+    column-gap: #{$value};
+  }
+  .gap-y-#{$key} {
+    row-gap: #{$value};
+  }
+}
+@each $key, $value in $dimensions {
+  .p-#{$key} {
+    padding: #{$value};
+  }
+  .pt-#{$key} {
+    padding-top: #{$value};
+  }
+  .pr-#{$key} {
+    padding-right: #{$value};
+  }
+  .pb-#{$key} {
+    padding-bottom: #{$value};
+  }
+  .pl-#{$key} {
+    padding-left: #{$value};
+  }
+  .px-#{$key} {
+    padding-left: #{$value};
+    padding-right: #{$value};
+  }
+  .py-#{$key} {
+    padding-top: #{$value};
+    padding-bottom: #{$value};
+  }
+}
+@each $key, $value in $dimensions {
+  .m-#{$key} {
+    margin: #{$value};
+  }
+  .mt-#{$key} {
+    margin-top: #{$value};
+  }
+  .mr-#{$key} {
+    margin-right: #{$value};
+  }
+  .mb-#{$key} {
+    margin-bottom: #{$value};
+  }
+  .ml-#{$key} {
+    margin-left: #{$value};
+  }
+  .mx-#{$key} {
+    margin-left: #{$value};
+    margin-right: #{$value};
+  }
+  .my-#{$key} {
+    margin-top: #{$value};
+    margin-bottom: #{$value};
+  }
+}
+
+/*
+========================================================================================================================
+The Custom Classes For Handling Grid Classes
+========================================================================================================================
+*/
+
+@for $i from 1 through 12 {
+  .grid-cols-#{$i} {
+    grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+  }
+}
+@for $i from 1 through 12 {
+  .col-span-#{$i} {
+    grid-column: span #{$i} / span #{$i};
+  }
+}
+
+/*
+========================================================================================================================
+The Custom Classes For Handling Display Classes
+========================================================================================================================
+*/
+
+.grid{
+  display: grid;
+}
+.block{
+  display: block;
+}
+.inline{
+  display: inline;
+}
+
+
+/*
+========================================================================================================================
+The Custom Classes For Text Colors
+========================================================================================================================
+*/
+$colors: (
+  white: var(--white),
+  black: var(--black),
+  navbar-border:var(--navbar-border),
+  navigation-link:var(--navigation-link),
+  footer-bg:var(--footer-bg),
+  footer-text:var(--footer-text),
+  form-input:var(--form-input),
+  input-border:var(--input-border),
+
+
+
+
+);
+@each $key, $value in $colors {
+  .text-#{$key} {
+    color: #{$value};
+  }
+  .bg-#{$key} {
+    background: #{$value};
+  }
+  .border-color-#{key}{
+    border-color: #{$value};
+  }
+}
+
+/*
+========================================================================================================================
+The Custom Classes For Text Sizes & Weight
+========================================================================================================================
+*/
+@for $i from 1 through 100 {
+  .font-size-#{$i}px {
+    font-size: #{$i}px;
+  }
+}
+@for $i from 1 through 9 {
+  .fw-#{$i * 100} {
+    font-weight: #{$i * 100};
+  }
+}
+/*
+========================================================================================================================
+The Custom Classes For Height & Width
+========================================================================================================================
+*/
+.w-full {
+  width: 100%;
+}
+.h-full{
+  height: 100%;
+}
+.w-full-screen{
+  width: 100vw;
+}
+.h-full-screen{
+  height: 100vh;
+}
