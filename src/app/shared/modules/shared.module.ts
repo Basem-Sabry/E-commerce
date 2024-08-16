@@ -4,13 +4,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from 'src/app/core/components/navbar/navbar.component';
 import { PaginationComponent } from '../components/pagination/pagination.component';
 import { ReplaceCharWithService } from '../pipes/replace-char-with.service';
+import { FooterComponent } from 'src/app/core/components/footer/footer.component';
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
     PaginationComponent,
-    ReplaceCharWithService
+    ReplaceCharWithService,
+    FooterComponent
 
   ],
   imports: [
@@ -25,7 +27,8 @@ import { ReplaceCharWithService } from '../pipes/replace-char-with.service';
     NavbarComponent,
     PaginationComponent,
     CommonModule,
-    ReplaceCharWithService
+    ReplaceCharWithService,
+    FooterComponent
 
   ]
 })
