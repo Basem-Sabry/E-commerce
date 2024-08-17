@@ -22,7 +22,6 @@ export class NavbarComponent {
 
     this._shared.myCart.subscribe(res => {
       if (res) {
-        console.log('Res',res)
         this.saveCart(res)
     }
   })

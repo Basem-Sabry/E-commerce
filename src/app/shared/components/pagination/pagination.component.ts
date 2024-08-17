@@ -107,19 +107,13 @@ prevPage() {
   }
 }
 
-reset() {
-  this.pointers.start = 0;
-  this.pointers.end = 3
-  this.paginationOptionsData.skip = 1
-  // this.paginationOptionsData.meta.per_page = `${this.perPageValue}`
-}
+
 
 
 setSelectedPage(page: any) {
 
   this.isButtonDisabled = true
   this.isLinksDisable = true
-  console.log('page',page)
     this.paginationOptionsData.skip = page;
   this.changePageEvent.emit(this.paginationOptionsData)
   if (this.pagesLinksVisible[this.pagesLinksVisible.length - 1] == page && page != this.pagesLinks[this.pagesLinks.length - 1]) {

@@ -18,7 +18,6 @@ export class AppComponent {
 
     this._shared.toasterSubject.subscribe({
       next: (res => {
-        console.log(res)
         if (res) {
           this.showCustomMessage(res)
         }
@@ -47,19 +46,14 @@ showCustomMessage(message:any) {
       this.componentRef.length - 1
   ].instance.notificationState.subscribe((res:any) => {
     if (res.state == 'Close') {
-      console.log('rrr', res)
-      console.log('componentRef',this.componentRef)
-
           if (this.componentRef.length > 0) {
               this.componentRef[res.id].instance.state = 'out'
-              // this.componentRef[res.id].destroy();
               this.componentRef.splice(res.id, 1);
           }
       }
   });
   setTimeout(() => {
       if (this.componentRef.length > 0) {
-          // this.componentRef[0].destroy();
           this.componentRef[0].instance.state = 'out'
 
           this.componentRef.splice(0, 1);

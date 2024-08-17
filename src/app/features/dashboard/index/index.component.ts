@@ -25,7 +25,6 @@ export class IndexComponent  {
         this.searchProducts(searchText)
       }
       else {
-        console.log('empaty',searchText)
         searchText == '' ? this.getProducts('all',10,1):''
       }
   });
@@ -46,7 +45,6 @@ export class IndexComponent  {
           skip: res.skip,
         }
         this._shared.paginationObj.next(paginationObj)
-        console.log('All Products',res)
       }),
       error: (err => {
         this.isLoading = false
@@ -61,7 +59,6 @@ export class IndexComponent  {
         this.categoryList = res
          this.categoryList.unshift('all')
         this.selectedCategory = 'all'
-        console.log('All cate',res)
       })
     })
   }
