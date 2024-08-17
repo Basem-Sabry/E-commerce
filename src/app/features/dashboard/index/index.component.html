@@ -1,0 +1,105 @@
+
+
+<div class="grid grid-cols-12 p-12 gap-4">
+  <div class="col-span-2 flex flex-col gap-2 categoryWrapper py-4">
+    <span class="fw-700 font-size-16px px-2">
+      Categories
+    </span>
+      @for (singleCategory of categoryList; track $index) {
+      <div class="px-4 flex items-center gap-1">
+        <input type="radio" [id]="singleCategory" [value]="singleCategory" [(ngModel)]="selectedCategory" (change)="getFilteredProducts()">
+            <label class="cursor-pointer font-size-16px text-category capitalize" [for]="singleCategory">
+            {{singleCategory}}
+
+            </label>
+      </div>
+      }
+  </div>
+  <div class="col-span-10 grid grid-cols-12 gap-4">
+
+      @if (!isLoading) {
+
+        @for (product of filteredProducts; track $index) {
+          <div class="singleProduct col-span-4 pb-4">
+              <div class="flex flex-col">
+                <div class="productImage relative">
+                  <img  [src]="product?.images[0]" alt="" srcset="">
+                  @if (product.discountPercentage) {
+
+                    <div class="productDiscount badge badge-primary">-{{product.discountPercentage }}%</div>
+                  }
+                </div>
+                <div class="productData px-4 flex flex-col jusify-between gap-3">
+                    <div class="flex flex-col gap-3">
+                      <div class="productTitle text-form-input fw-700 font-size-20px">
+                        {{product.title}}
+                      </div>
+                      <div class="productDesc text-form-input fw-400 font-size-16px">
+                        {{product.description}}
+
+                      </div>
+                      <div class="productPrice my-2 fw-700 text-form-input font-size-14px flex gap-3 items-center">
+                        <span class="oldPrice" [class]="product.discountPercentage > 0 ? 'line-through' : ''"> {{product.price |currency}}</span>
+                        @if (product.discountPercentage > 0) {
+                          <span class="newPrice text-red-500 fw-700 font-size-14px">
+                            {{product.price - (product.price * product.discountPercentage / 100) | currency}}
+                          </span>
+                        }
+
+
+                      </div>
+                      <div class="productBrand">
+                        <span class="fw-400 font-size-14px">
+                          Brand :
+                        </span> <span class="fw-600 font-size-16px">
+                          {{product.brand}}
+                        </span>
+
+                      </div>
+                      <div class="productCategory">
+                        <span class="fw-400 font-size-14px">
+                          Category :
+                        </span> <span class="fw-600 font-size-16px">
+                          {{product.category}}
+                        </span>
+                      </div>
+                      <div class="productStock">
+                        <span class="fw-400 font-size-14px">
+                          In Stock :
+                        </span> <span class="fw-600 font-size-16px">
+                          {{product.stock}}
+                        </span>
+
+
+                      </div>
+                      <div class="productRating flex justify-end gap-1">
+                        <div class="flex">
+                          <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.20712 0.51239C8.31056 0.302795 8.60944 0.302795 8.71288 0.51239L10.8807 4.90491C10.9218 4.98814 11.0012 5.04583 11.093 5.05918L15.9405 5.76355C16.1718 5.79716 16.2641 6.08141 16.0968 6.24456L12.5891 9.66366C12.5227 9.72844 12.4923 9.82179 12.508 9.91327L13.3361 14.7411C13.3756 14.9715 13.1338 15.1472 12.9269 15.0384L8.59123 12.759C8.50907 12.7158 8.41093 12.7158 8.32877 12.759L3.9931 15.0384C3.78621 15.1472 3.54442 14.9715 3.58393 14.7411L4.41197 9.91327C4.42766 9.82179 4.39733 9.72844 4.33087 9.66366L0.823229 6.24456C0.655857 6.08141 0.748215 5.79716 0.979517 5.76355L5.82695 5.05918C5.9188 5.04583 5.9982 4.98814 6.03928 4.90491L8.20712 0.51239Z" fill="#213C53" fill-opacity="0.3"/>
+                            <path d="M8.20712 0.51239C8.31056 0.302795 8.60944 0.302795 8.71288 0.51239L10.8807 4.90491C10.9218 4.98814 11.0012 5.04583 11.093 5.05918L12.9846 5.33403V6.66428V9.27819L12.5891 9.66366C12.5227 9.72844 12.4923 9.82178 12.508 9.91326L13.3361 14.7411C13.3756 14.9715 13.1338 15.1472 12.9269 15.0384L8.59123 12.759C8.50907 12.7158 8.41093 12.7158 8.32877 12.759L3.9931 15.0384C3.78621 15.1472 3.54442 14.9715 3.58393 14.7411L4.41197 9.91326C4.42766 9.82178 4.39733 9.72844 4.33087 9.66366L0.82323 6.24456C0.655858 6.08141 0.748216 5.79716 0.979518 5.76355L5.82695 5.05918C5.9188 5.04583 5.99821 4.98814 6.03928 4.90491L8.20712 0.51239Z" fill="#F4B000"/>
+                            </svg>
+                            <span class="text-gold-yellow fw-700">{{product.rating}} </span>
+                        </div>
+                          <span class="text-category fw-400">   ({{product?.reviews?.length}})
+                          </span>
+                      </div>
+                    </div>
+
+                </div>
+              </div>
+              <div class="productBtn px-6">
+                <button class="btn btn-login py-3 border-4px fw-700 font-size-16px" (click)="addToCart(product)">Add to cart</button>
+              </div>
+          </div>
+
+        }
+      }
+      @else {
+        <div class="col-span-12 flex items-center justify-center">
+
+          <app-loader></app-loader>
+        </div>
+
+      }
+  </div>
+</div>

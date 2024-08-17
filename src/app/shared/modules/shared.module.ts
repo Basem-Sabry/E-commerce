@@ -5,6 +5,7 @@ import { NavbarComponent } from 'src/app/core/components/navbar/navbar.component
 import { PaginationComponent } from '../components/pagination/pagination.component';
 import { ReplaceCharWithService } from '../pipes/replace-char-with.service';
 import { FooterComponent } from 'src/app/core/components/footer/footer.component';
+import { LoaderComponent } from '../components/loader/loader.component';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { FooterComponent } from 'src/app/core/components/footer/footer.component
     NavbarComponent,
     PaginationComponent,
     ReplaceCharWithService,
-    FooterComponent
+    FooterComponent,
+    LoaderComponent
 
   ],
   imports: [
@@ -28,7 +30,8 @@ import { FooterComponent } from 'src/app/core/components/footer/footer.component
     PaginationComponent,
     CommonModule,
     ReplaceCharWithService,
-    FooterComponent
+    FooterComponent,
+    LoaderComponent
 
   ]
 })

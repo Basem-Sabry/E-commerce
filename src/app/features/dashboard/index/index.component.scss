@@ -1,0 +1,28 @@
+.categoryWrapper{
+  border: 1px solid var(--navbar-border);
+  border-radius: 8px;
+  height: fit-content;
+}
+.singleProduct{
+  border: 1px solid var(--navbar-border);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+  justify-content: space-between;
+   .productImage{
+    img{
+      width: 100%;
+      max-height: 300px;
+      min-height: 300px;
+      object-fit: contain;
+    }
+   }
+
+
+}
+.productDiscount{
+  position: absolute;
+    top: 1em;
+    left: 1em;
+}
