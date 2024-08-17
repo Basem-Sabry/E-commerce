@@ -33,3 +33,8 @@ body{
   border:1px solid  var(--sign-in-btn);
 
 }
+.disabled{
+  pointer-events: none !important;
+  border: 1px solid #30375014 !important;
+  color: #979797 !important;
+}

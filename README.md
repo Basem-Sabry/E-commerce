@@ -1,6 +1,6 @@
 # PlenyTask
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2.
 
 ## Development server
 
@@ -14,14 +14,34 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Guards 
+There 2 guards for handling the authenticated users and the not authenticated users 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Pagination
+There is a pagination system for handling the data in the main components depend on the incoming pagination from the API
 
-## Running end-to-end tests
+## Toast Service 
+There is custom toastr component to handle the custom toastr event that is submitted on action
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## AUTH Service
+There is a custom auth service to handle the authentication API Calling and the token  is Handled inside the login component
 
-## Further help
+## Shared Service 
+There is a custom shared service to handle the shared data between the components and the API Calls 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## AUTH Folder 
+There is a custom auth folder to handle the authentication related components and has the login component
+
+## Dashboard Folder 
+There is a custom dashboard folder to handle the dashboard related components and has the main components
+
+## Shared Folder
+There is a custom shared folder to handle the shared components and has the toastr component and pagination and loader
+
+## Style 
+There is custom style framework i did to help through development inside custom-framework.scss
+
+## Style 2 
+There is variables file to handle all colors inside on file
+
+

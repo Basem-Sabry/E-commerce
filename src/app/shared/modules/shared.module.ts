@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from 'src/app/core/components/navbar/navbar.component';
 import { PaginationComponent } from '../components/pagination/pagination.component';
-import { ReplaceCharWithService } from '../pipes/replace-char-with.service';
 import { FooterComponent } from 'src/app/core/components/footer/footer.component';
 import { LoaderComponent } from '../components/loader/loader.component';
 import { ToastrComponent } from '../components/toastr/toastr.component';
@@ -13,7 +12,6 @@ import { ToastrComponent } from '../components/toastr/toastr.component';
   declarations: [
     NavbarComponent,
     PaginationComponent,
-    ReplaceCharWithService,
     FooterComponent,
     LoaderComponent,
     ToastrComponent
@@ -31,7 +29,6 @@ import { ToastrComponent } from '../components/toastr/toastr.component';
     NavbarComponent,
     PaginationComponent,
     CommonModule,
-    ReplaceCharWithService,
     FooterComponent,
     LoaderComponent,
     ToastrComponent
