@@ -86,6 +86,14 @@
 
   </div>
   <div class="navbar__right-section col-span-6 flex justify-end">
-      Login
+      @if (!loggedIn) {
+        Login
+      }
+      @else {
+        <div class="flex items-center gap-x-4">
+
+          <span class="cursor-pointer" (click)="logout()">Logout</span>
+        </div>
+      }
   </div>
 </div>
