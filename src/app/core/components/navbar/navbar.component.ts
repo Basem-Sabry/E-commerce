@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
   loggedIn: boolean = false
-  cartArr:any[]=[]
+  cartArr: any[] = []
+  searchVal:string = ''
   constructor(private _shared : SharedService,private _router : Router) {
     this.getCart()
   }
@@ -42,5 +43,8 @@ export class NavbarComponent {
     this.loggedIn = false
     this._shared.isLoggedIn.next(null)
     this._router.navigate(['/'])
+  }
+  startSearch() {
+    this._shared.searchSubject.next(this.searchVal)
   }
 }

@@ -10,6 +10,8 @@ export class SharedService {
   initialValueOfLoginState = localStorage.getItem('user')
   isLoggedIn = new BehaviorSubject(this.initialValueOfLoginState)
   myCart = new BehaviorSubject(null)
+  searchSubject = new BehaviorSubject<string>('')
+
 
   paginationObj:any = new BehaviorSubject(null)
   constructor(
@@ -33,5 +35,11 @@ export class SharedService {
     return this._http.get<any>(environment.app_api_url + `products/category-list`)
 
   }
+  searchProduct(limit:number,skip:number,searchText: string) {
+    var params = '&'
+    params += `limit=${limit}&skip=${skip}`
 
+    return this._http.get<any>(environment.app_api_url + `products/search?q=${searchText}${params}`)
+
+  }
 }
