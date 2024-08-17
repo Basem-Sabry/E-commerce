@@ -78,10 +78,10 @@ export class IndexComponent  {
 
     })
   }
-  searchProducts(searchText: string) {
+  searchProducts(searchText: string,paginationObj?:any ) {
     this.isLoading = true
 
-    this._shared.searchProduct(10,1,searchText).subscribe({
+    this._shared.searchProduct(10,paginationObj?.skip ? paginationObj?.skip : 1,searchText).subscribe({
       next: (res => {
         this.isLoading = false
         this.filteredProducts = res.products
@@ -101,6 +101,12 @@ export class IndexComponent  {
   }
 
   updateProducts(e: any) {
-    this.getProducts(this.selectedCategory,e.limit,e.skip,this.searchText)
+    if (this.searchText) {
+      this.searchProducts(this.searchText,e)
+    }
+    else {
+
+      this.getProducts(this.selectedCategory,e.limit,e.skip,this.searchText)
+    }
   }
 }

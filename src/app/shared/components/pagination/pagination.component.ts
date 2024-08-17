@@ -37,15 +37,20 @@ export class PaginationComponent {
 
             if (res) {
               this.paginationOptionsData = res;
-              console.log('res', res)
-              const pagesNumber = Math.ceil(this.paginationOptionsData?.total/this.paginationOptionsData?.limit)
+              const pagesNumber = Math.ceil(this.paginationOptionsData?.total / this.paginationOptionsData?.limit)
               this.pagesLinks = Array(pagesNumber).fill(null).map((acc, i) => i + 1)
-              console.log('page',this.pagesLinks)
-                if (this.paginationOptionsData?.skip == pagesNumber) {
-                    this.pagesLinksVisible =this.pagesLinks
+                if (this.paginationOptionsData?.skip > pagesNumber) {
+                  this.pagesLinksVisible = this.pagesLinks
                 }
                 else {
+                  if (this.pagesLinks.length > 3) {
+
                     this.pagesLinksVisible = this.pagesLinks.slice(this.pointers.start , this.pointers.end)
+                  }
+                  else {
+                  this.pagesLinksVisible = this.pagesLinks
+
+                  }
 
                 }
                 this.isButtonDisabled = false;
