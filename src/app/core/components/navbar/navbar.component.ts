@@ -41,6 +41,7 @@ export class NavbarComponent {
   logout(){
     localStorage.clear()
     this.loggedIn = false
+    this.cartArr = []
     this._shared.isLoggedIn.next(null)
     this._router.navigate(['/'])
   }
