@@ -10,7 +10,8 @@ import { SharedService } from 'src/app/core/services/shared.service';
 export class PaginationComponent {
   @Output() changePageEvent = new EventEmitter()
 
-  @Input() paginationOptions : any;
+  @Input() loadingState: any;
+
 
   pointers = {start:0 , end:3}
 
