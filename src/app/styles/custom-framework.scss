@@ -299,7 +299,9 @@ The Custom Classes For General
 .capitalize{
   text-transform: capitalize !important;
 }
-
+.fi{
+  display: flex;
+}
 /*
 ========================================================================================================================
 The Custom Classes For border
