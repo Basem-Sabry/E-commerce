@@ -1,0 +1,67 @@
+.custom-paginator{
+  background-color: white;
+  border-radius: 0 0 12px 12px ;
+}
+.custom-paginator .pagesOptions {
+     border: 1px solid #E9E9E9;
+  border-radius: 8px;
+  width: 60px !important;
+  height: 40px !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.paginatorRigthContent{
+  width: 16rem;
+}
+
+
+
+
+.perPageText{
+  font-size: 16px ;
+  font-weight: 400;
+  line-height: 24px;
+  color: #646464;
+}
+
+.paginatorLinks .prevBtn{
+border: 1px solid #30375014;
+border-radius: 4px;
+padding: .5em;
+background: #fff;
+font-size: 18px;
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+}
+
+
+
+.paginatorLinks .prevBtn:disabled{
+  color: #646464;
+  border-color: #E9E9E9;
+}
+
+.paginatorLinksBtn button{
+  color: #212121;
+
+  min-width: 32px !important;
+  height: 32px !important;
+  background-color: transparent;
+  border: none;
+      border-radius: 8px;
+}
+
+.paginatorLinks button.selected{
+          background-color: #41CCCC;
+}
+
+.paginationRight span{
+  font-size: 16px;
+  font-weight: 400;
+  // line-height: 24px;
+  color: #646464;
+}
+

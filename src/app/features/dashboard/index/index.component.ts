@@ -11,7 +11,8 @@ export class IndexComponent  {
   categoryList: string[] = []
   filteredProducts: any[] = []
   selectedCategory:string = ''
-  isLoading:boolean = false
+  isLoading: boolean = false
+  searchText:string = ''
   constructor(private _shared:SharedService) {
 
   }
@@ -19,6 +20,7 @@ export class IndexComponent  {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     this._shared.searchSubject.pipe(debounceTime(300)).subscribe((searchText) => {
+      this.searchText = searchText
         this.searchProducts(searchText)
   });
     this.getProducts('all', 10, 1)
@@ -34,7 +36,7 @@ export class IndexComponent  {
 
         const paginationObj = {
           total: res.total,
-          limit: res.limit,
+          limit: 10,
           skip: res.skip,
         }
         this._shared.paginationObj.next(paginationObj)
@@ -74,7 +76,7 @@ export class IndexComponent  {
 
         const paginationObj = {
           total: res.total,
-          limit: res.limit,
+          limit: 10,
           skip: res.skip,
         }
         this._shared.paginationObj.next(paginationObj)
@@ -84,5 +86,9 @@ export class IndexComponent  {
 
       })
       })
+  }
+  updateProducts(e: any) {
+    this.getProducts(this.selectedCategory,e.limit,e.skip,this.searchText)
+    console.log('incoming event',e)
   }
 }

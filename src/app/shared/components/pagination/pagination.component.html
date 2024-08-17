@@ -1,0 +1,32 @@
+@if (totalPages > 1 ) {
+
+  <section class="custom-paginator p-4">
+    <div class="grid grid-cols-12 align-items-center justify-center">
+      <div class="col-span-3"></div>
+        <div class="col-span-6 " *ngIf="paginationOptionsData?.total> 0 ">
+            <div class="paginatorLinks flex justify-center items-center">
+                <button [disabled]="this.paginationOptions?.skip === 1 || isButtonDisabled" (click)="prevPage()" class="prevBtn">
+                  <i class="fi fi-rr-angle-small-left"></i>
+                </button>
+
+                <div class="paginatorLinksBtn flex items-center gap-3 mx-4">
+                    <button [disabled]="isLinksDisable" *ngFor="let link of pagesLinksVisible" (click)="setSelectedPage(link)" [ngClass]="paginationOptionsData?.skip === link ? 'selected' : '' ">{{link}}</button>
+                    <div *ngIf="this.paginationOptionsData?.skip < pagesLinks[pagesLinks.length -2] " class="last">
+                      <i class="fi fi-rr-menu-dots"></i>
+                    </div>
+                    <button (click)="setSelectedPage(pagesLinks[pagesLinks.length - 1])" *ngIf="this.paginationOptionsData?.skip < pagesLinks[pagesLinks.length -2] "   >{{pagesLinks[pagesLinks.length - 1]}}</button>
+                </div>
+
+                <button [disabled]="this.paginationOptions?.skip ===  totalPages|| isButtonDisabled" (click)="nextPage()" class="prevBtn">
+                  <i class="fi fi-rr-angle-small-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="col-span-3"></div>
+
+
+    </div>
+</section>
+
+}
