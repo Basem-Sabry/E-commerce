@@ -10,7 +10,9 @@ export class SharedService {
   initialValueOfLoginState = localStorage.getItem('user')
   isLoggedIn = new BehaviorSubject(this.initialValueOfLoginState)
   myCart = new BehaviorSubject(null)
-  searchSubject = new BehaviorSubject<string>('')
+  searchSubject = new BehaviorSubject<string | null>(null)
+  toasterSubject = new BehaviorSubject<any>(null)
+
 
 
   paginationObj:any = new BehaviorSubject(null)

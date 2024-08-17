@@ -1,0 +1,13 @@
+.toast{
+  max-width: 300px;
+}
+.toastWrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  position: fixed;
+  top: 5px;
+  z-index: 9999;
+  overflow: hidden;
+  right: 20px;
+}

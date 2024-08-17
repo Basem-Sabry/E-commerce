@@ -128,7 +128,7 @@
 
       }
       <div class="col-span-12">
-<app-pagination (changePageEvent)="updateProducts($event)">  </app-pagination>
+<app-pagination (changePageEvent)="updateProducts($event)" [loadingState]="isLoading">  </app-pagination>
 
       </div>
   </div>

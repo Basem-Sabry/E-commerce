@@ -38,6 +38,13 @@ export class LoginComponent implements OnInit {
           email: response?.email,
 
         }
+        this._shared.toasterSubject.next({
+          title:'Success',
+          message: 'Login Successfully',
+          type: 'fi fi-rr-cloud-check',
+          state:'in'
+
+        })
         localStorage.setItem('user', JSON.stringify(user));
         localStorage.setItem('token', response?.token);
         this._shared.isLoggedIn.next(JSON.stringify(user))

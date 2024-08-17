@@ -6,6 +6,7 @@ import { PaginationComponent } from '../components/pagination/pagination.compone
 import { ReplaceCharWithService } from '../pipes/replace-char-with.service';
 import { FooterComponent } from 'src/app/core/components/footer/footer.component';
 import { LoaderComponent } from '../components/loader/loader.component';
+import { ToastrComponent } from '../components/toastr/toastr.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { LoaderComponent } from '../components/loader/loader.component';
     PaginationComponent,
     ReplaceCharWithService,
     FooterComponent,
-    LoaderComponent
+    LoaderComponent,
+    ToastrComponent
 
   ],
   imports: [
@@ -31,7 +33,8 @@ import { LoaderComponent } from '../components/loader/loader.component';
     CommonModule,
     ReplaceCharWithService,
     FooterComponent,
-    LoaderComponent
+    LoaderComponent,
+    ToastrComponent
 
   ]
 })

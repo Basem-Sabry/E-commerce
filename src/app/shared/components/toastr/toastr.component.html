@@ -1,0 +1,14 @@
+@if (state == 'in') {
+  <div class="custom-message flex items-center  gap-4" [@slideInOut] >
+    <i  class="fi"  [class]="icon"></i>
+
+  <div class="flex flex-col flex-1 gap-2">
+        <span class="font-size-18px fw-600">{{title}}</span>
+
+      <p class="content m-0 p-0 font-size-14px">{{content}}</p>
+  </div>
+  <i class="fi fi-rr-circle-xmark" (click)="closeNotification()"></i>
+
+  </div>
+
+}

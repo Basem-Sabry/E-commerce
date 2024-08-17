@@ -20,8 +20,14 @@ export class IndexComponent  {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     this._shared.searchSubject.pipe(debounceTime(300)).subscribe((searchText) => {
-      this.searchText = searchText
+      if (searchText) {
+        this.searchText = searchText
         this.searchProducts(searchText)
+      }
+      else {
+        console.log('empaty',searchText)
+        searchText == '' ? this.getProducts('all',10,1):''
+      }
   });
     this.getProducts('all', 10, 1)
     this.getCategories()
@@ -64,7 +70,13 @@ export class IndexComponent  {
   }
   addToCart(product: any) {
     this._shared.myCart.next(product)
-    console.log('Add to cart clicked',product)
+    this._shared.toasterSubject.next({
+      title:'Success',
+      message: 'Product added to cart',
+      type: 'fi fi-rr-cloud-check',
+      state:'in'
+
+    })
   }
   searchProducts(searchText: string) {
     this.isLoading = true
@@ -87,8 +99,8 @@ export class IndexComponent  {
       })
       })
   }
+
   updateProducts(e: any) {
     this.getProducts(this.selectedCategory,e.limit,e.skip,this.searchText)
-    console.log('incoming event',e)
   }
 }
