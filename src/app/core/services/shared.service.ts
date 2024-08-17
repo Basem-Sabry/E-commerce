@@ -9,6 +9,8 @@ import { environment } from 'src/environments/environment';
 export class SharedService {
   initialValueOfLoginState = localStorage.getItem('user')
   isLoggedIn = new BehaviorSubject(this.initialValueOfLoginState)
+  myCart = new BehaviorSubject(null)
+
   paginationObj:any = new BehaviorSubject(null)
   constructor(
 

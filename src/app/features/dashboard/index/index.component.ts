@@ -56,7 +56,8 @@ export class IndexComponent  {
   getFilteredProducts() {
       this.getProducts(this.selectedCategory ,10 , 1)
   }
-  addToCart(product:any) {
+  addToCart(product: any) {
+    this._shared.myCart.next(product)
     console.log('Add to cart clicked',product)
   }
 }
