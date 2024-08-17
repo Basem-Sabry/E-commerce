@@ -17,7 +17,7 @@ $dimensions: (
   48: 12rem,
   56: 14rem,
   64: 16rem,
-);
+) ;
 
 /*
 ========================================================================================================================
@@ -28,81 +28,81 @@ The Custom Classes For Handling Flex
   flex:1
 }
 .flex {
-  display: flex;
+  display: flex !important;
 }
 
 .inline-flex {
-  display: inline-flex;
+  display: inline-flex !important;
 }
 
 .flex-row {
-  flex-direction: row;
+  flex-direction: row !important;
 }
 
 .flex-row-reverse {
-  flex-direction: row-reverse;
+  flex-direction: row-reverse !important;
 }
 
 .flex-col {
-  flex-direction: column;
+  flex-direction: column !important;
 }
 
 .flex-col-reverse {
-  flex-direction: column-reverse;
+  flex-direction: column-reverse !important;
 }
 
 .flex-wrap {
-  flex-wrap: wrap;
+  flex-wrap: wrap !important;
 }
 
 .flex-wrap-reverse {
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse !important;
 }
 
 .flex-nowrap {
-  flex-wrap: nowrap;
+  flex-wrap: nowrap !important;
 }
 .justify-start {
-  justify-content: flex-start;
+  justify-content: flex-start !important;
 }
 
 .justify-end {
-  justify-content: flex-end;
+  justify-content: flex-end !important;
 }
 
 .justify-center {
-  justify-content: center;
+  justify-content: center !important;
 }
 
 .justify-between {
-  justify-content: space-between;
+  justify-content: space-between !important;
 }
 
 .justify-around {
-  justify-content: space-around;
+  justify-content: space-around !important;
 }
 
 .justify-evenly {
-  justify-content: space-evenly;
+  justify-content: space-evenly !important;
 }
 .items-start {
-  align-items: flex-start;
+  align-items: flex-start !important;
 }
 
 .items-end {
-  align-items: flex-end;
+  align-items: flex-end !important;
 }
 
 .items-center {
-  align-items: center;
+  align-items: center !important;
 }
 
 .items-baseline {
-  align-items: baseline;
+  align-items: baseline !important;
 }
 
 .items-stretch {
-  align-items: stretch;
+  align-items: stretch !important;
 }
 
 
@@ -113,63 +113,63 @@ The Custom Classes For Handling Padding , Margins , Gapping
 */
 @each $key, $value in $dimensions {
   .gap-#{$key} {
-    gap: #{$value};
+    gap: #{$value} !important;
   }
   .gap-x-#{$key} {
-    column-gap: #{$value};
+    column-gap: #{$value} !important;
   }
   .gap-y-#{$key} {
-    row-gap: #{$value};
+    row-gap: #{$value} !important;
   }
 }
 @each $key, $value in $dimensions {
   .p-#{$key} {
-    padding: #{$value};
+    padding: #{$value} !important;
   }
   .pt-#{$key} {
-    padding-top: #{$value};
+    padding-top: #{$value} !important;
   }
   .pr-#{$key} {
-    padding-right: #{$value};
+    padding-right: #{$value} !important;
   }
   .pb-#{$key} {
-    padding-bottom: #{$value};
+    padding-bottom: #{$value} !important;
   }
   .pl-#{$key} {
-    padding-left: #{$value};
+    padding-left: #{$value} !important;
   }
   .px-#{$key} {
-    padding-left: #{$value};
-    padding-right: #{$value};
+    padding-left: #{$value} !important;
+    padding-right: #{$value} !important;
   }
   .py-#{$key} {
-    padding-top: #{$value};
-    padding-bottom: #{$value};
+    padding-top: #{$value} !important;
+    padding-bottom: #{$value} !important;
   }
 }
 @each $key, $value in $dimensions {
   .m-#{$key} {
-    margin: #{$value};
+    margin: #{$value} !important;
   }
   .mt-#{$key} {
-    margin-top: #{$value};
+    margin-top: #{$value} !important;
   }
   .mr-#{$key} {
-    margin-right: #{$value};
+    margin-right: #{$value} !important;
   }
   .mb-#{$key} {
-    margin-bottom: #{$value};
+    margin-bottom: #{$value} !important;
   }
   .ml-#{$key} {
-    margin-left: #{$value};
+    margin-left: #{$value} !important;
   }
   .mx-#{$key} {
-    margin-left: #{$value};
-    margin-right: #{$value};
+    margin-left: #{$value} !important;
+    margin-right: #{$value} !important;
   }
   .my-#{$key} {
-    margin-top: #{$value};
-    margin-bottom: #{$value};
+    margin-top: #{$value} !important;
+    margin-bottom: #{$value} !important;
   }
 }
 
@@ -181,12 +181,12 @@ The Custom Classes For Handling Grid Classes
 
 @for $i from 1 through 12 {
   .grid-cols-#{$i} {
-    grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+    grid-template-columns: repeat(#{$i}, minmax(0, 1fr)) !important;
   }
 }
 @for $i from 1 through 12 {
   .col-span-#{$i} {
-    grid-column: span #{$i} / span #{$i};
+    grid-column: span #{$i} / span #{$i} !important;
   }
 }
 
@@ -197,13 +197,13 @@ The Custom Classes For Handling Display Classes
 */
 
 .grid{
-  display: grid;
+  display: grid !important;
 }
 .block{
-  display: block;
+  display: block !important;
 }
 .inline{
-  display: inline;
+  display: inline !important;
 }
 
 
@@ -221,21 +221,20 @@ $colors: (
   footer-text:var(--footer-text),
   form-input:var(--form-input),
   input-border:var(--input-border),
-
-
-
+  sign-in-btn:var(--sign-in-btn),
+  danger:var(--danger),
+  category:var(--category),
+  gold-yellow:var(--gold-yellow),
 
 );
 @each $key, $value in $colors {
   .text-#{$key} {
-    color: #{$value};
+    color: #{$value} !important;
   }
   .bg-#{$key} {
-    background: #{$value};
+    background: #{$value} !important;
   }
-  .border-color-#{key}{
-    border-color: #{$value};
-  }
+
 }
 
 /*
@@ -245,28 +244,69 @@ The Custom Classes For Text Sizes & Weight
 */
 @for $i from 1 through 100 {
   .font-size-#{$i}px {
-    font-size: #{$i}px;
+    font-size: #{$i}px !important;
   }
 }
 @for $i from 1 through 9 {
   .fw-#{$i * 100} {
-    font-weight: #{$i * 100};
+    font-weight: #{$i * 100} !important;
   }
 }
+
 /*
 ========================================================================================================================
 The Custom Classes For Height & Width
 ========================================================================================================================
 */
 .w-full {
-  width: 100%;
+  width: 100% !important;
 }
 .h-full{
-  height: 100%;
+  height: 100% !important;
 }
 .w-full-screen{
-  width: 100vw;
+  width: 100vw !important;
 }
 .h-full-screen{
-  height: 100vh;
+  height: 100vh !important;
+}
+
+
+/*
+========================================================================================================================
+The Custom Classes For General
+========================================================================================================================
+*/
+.cursor-pointer{
+  cursor: pointer !important;
+}
+.line-through{
+  text-decoration: line-through !important;
+}
+.badge {
+  padding:0.2em 1em !important;
+  border: 1px solid var(--sign-in-btn) !important;
+  border-radius: 4px !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+}
+.badge-primary {
+  background-color: var(--sign-in-btn) !important;
+}
+.relative {
+  position: relative !important;
+}
+.capitalize{
+  text-transform: capitalize !important;
+}
+
+/*
+========================================================================================================================
+The Custom Classes For border
+========================================================================================================================
+*/
+@for $i from 1 through 100 {
+  .border-#{$i}px {
+    border-radius: #{$i}px !important;
+  }
 }

@@ -1,7 +1,7 @@
 
 export const environment = {
   production: false,
-  app_api_url: '',
+  app_api_url: 'https://dummyjson.com/',
 
 
 };

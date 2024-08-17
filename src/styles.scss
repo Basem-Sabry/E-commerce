@@ -15,3 +15,21 @@ body{
   border: 1px solid var(--input-border);
   border-radius: 8px;
 }
+
+.btn {
+  padding: 10px 18px ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+
+}
+.btn-login{
+  background: var(--sign-in-btn);
+  border:1px solid  var(--sign-in-btn);
+
+}
