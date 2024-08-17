@@ -44,4 +44,7 @@ There is custom style framework i did to help through development inside custom-
 ## Style 2 
 There is variables file to handle all colors inside on file
 
+## Responsive 
+There is a responsive design for the application to handle the different screen sizes
+
 
