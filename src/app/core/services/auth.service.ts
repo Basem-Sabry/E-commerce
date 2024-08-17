@@ -14,11 +14,9 @@ export class AuthService {
 
 
   login(req_body:any) {
-    const formData = new FormData()
-    formData.append('email', req_body.email)
-    formData.append('password',req_body.password)
 
-    return this._http.post<any>(environment.app_api_url + `/auth/login`,formData)
+
+    return this._http.post<any>(environment.app_api_url + `auth/login`,req_body)
 }
 
 
